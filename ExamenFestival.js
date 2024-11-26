@@ -905,51 +905,43 @@ let respuestas = [];
 let cantiCorrectas = 0;
 let numPregunta = 0;
 
-const preguntasFiltradas = bd_juego.filter(p => p.id >= 100 && p.id <= 104);
 // Cargar preguntas dinámicamente
 function cargarPreguntas() {
- preguntasFiltradas.forEach((pregunta, index) => {
-        const contenedor = document.createElement("div");
-        contenedor.className = "contenedor-pregunta";
-        contenedor.id = "pregunta-" + pregunta.id;
+    const pregunta = bd_juego[numPregunta];
+    const contenedor = document.createElement("div");
+    contenedor.className = "contenedor-pregunta";
+    contenedor.id = "pregunta-" + pregunta.id;
 
-        const h2 = document.createElement("h2");
-        h2.textContent = (pregunta.id + 1) + " - " + pregunta.pregunta;
-        contenedor.appendChild(h2);
+    const h2 = document.createElement("h2");
+    h2.textContent = (pregunta.id + 1) + " - " + pregunta.pregunta;
+    contenedor.appendChild(h2);
 
-        // Crea el elemento de audio si existe en la pregunta
-        if (pregunta.audio) {
-            const audio = document.createElement("audio");
-            audio.src = pregunta.audio;
-            audio.controls = true;
-            contenedor.appendChild(audio);
-        }
+    const opciones = document.createElement("div");
+    opciones.className = "opciones";
 
-        // Agrega las opciones de respuesta
-        const opciones = document.createElement("div");
-        opciones.className = "opciones";
+    for (let i = 0; i < 3; i++) { // Suponemos que cada pregunta tiene 3 opciones
+        const label = crearLabel(i, pregunta[`op${i}`]);
+        opciones.appendChild(label);
+    }
 
-        for (let i = 0; i < 3; i++) {  // Cambié a 4 porque estas preguntas tienen 4 opciones
-            if (pregunta[`op${i}`]) {
-                const label = crearLabel(index, i, pregunta[`op${i}`]);
-                opciones.appendChild(label);
-            }
-        }
-
-        contenedor.appendChild(opciones);
-        document.getElementById("juego").appendChild(contenedor);
-    });
+    contenedor.appendChild(opciones);
+    document.getElementById("juego").appendChild(contenedor);
 }
 
-function crearLabel(preguntaIndex, opcionIndex, txtOpcion) {
+function crearLabel(num, txtOpcion) {
     const label = document.createElement("label");
 
     const input = document.createElement("input");
     input.type = "radio";
-    input.name = "p" + preguntaIndex;
-    input.value = opcionIndex;
-    
-    input.onclick = () => seleccionar(preguntaIndex, opcionIndex);
+    input.name = "p" + numPregunta; // Cada pregunta tiene un grupo único
+    input.value = num;
+
+    // Usar closure para asociar correctamente la pregunta y la opción
+    input.onclick = (function (preguntaId, opcionSeleccionada) {
+        return function () {
+            seleccionar(preguntaId, opcionSeleccionada);
+        };
+    })(numPregunta, num);
 
     const span = document.createElement("span");
     span.textContent = txtOpcion;
