@@ -986,7 +986,7 @@ function cargarPreguntas() {
         contenedor.appendChild(opciones);
 
         // Verificar si la pregunta es la 104 para insertar el texto entre la 104 y la 106
-        if (pregunta.id === 104) {
+        if (pregunta.id === 106) {
             const textoParque = document.createElement("div");
             textoParque.className = "texto-parque";
             textoParque.innerHTML = `
