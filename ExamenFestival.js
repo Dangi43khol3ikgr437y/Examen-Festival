@@ -905,6 +905,55 @@ let respuestas = [];
 let cantiCorrectas = 0;
 let numPregunta = 0;
 
+
+// Cargar solo las preguntas de la 100 a la 104
+function cargarPreguntasEspecificas() {
+    for (let i = 100; i <= 104; i++) {
+        const pregunta = bd_juego.find(p => p.id === i); // Encuentra cada pregunta específica
+        if (pregunta) {
+            cargarPreguntaIndividual(pregunta); // Carga solo la pregunta actual
+        }
+    }
+}
+
+// Función para cargar cada pregunta individual
+function cargarPreguntaIndividual(pregunta) {
+    const contenedor = document.createElement("div");
+    contenedor.className = "contenedor-pregunta";
+    contenedor.id = "pregunta-" + pregunta.id;
+
+    const h2 = document.createElement("h2");
+    h2.textContent = (pregunta.id + 1) + " - " + pregunta.pregunta;
+    contenedor.appendChild(h2);
+
+    // Agregar el elemento de audio
+    if (pregunta.audio) {
+        const audio = document.createElement("audio");
+        audio.src = pregunta.audio;
+        audio.controls = true;
+        contenedor.appendChild(audio);
+    }
+
+    // Agregar las opciones de respuesta
+    const opciones = document.createElement("div");
+    opciones.className = "opciones";
+
+    for (let i = 0; i < 4; i++) {  // Ajustado a 4 opciones
+        if (pregunta[`op${i}`]) {
+            const label = crearLabel(pregunta.id, i, pregunta[`op${i}`]);
+            opciones.appendChild(label);
+        }
+    }
+
+    contenedor.appendChild(opciones);
+    document.getElementById("juego").appendChild(contenedor);
+}
+
+// Llamada a la función para cargar preguntas específicas
+document.addEventListener('DOMContentLoaded', function () {
+    cargarPreguntasEspecificas();  // Solo carga preguntas 100-104
+});
+
 // Cargar preguntas dinámicamente
 function cargarPreguntas() {
     const pregunta = bd_juego[numPregunta];
