@@ -852,47 +852,301 @@ const bd_juego = [
 ];
 
 
-let respuestas = [];
-let cantiCorrectas = 0;
-let numPregunta = 0;
-
-// Cargar preguntas dinámicamente
 function cargarPreguntas() {
     const pregunta = bd_juego[numPregunta];
     const contenedor = document.createElement("div");
     contenedor.className = "contenedor-pregunta";
-    contenedor.id = "pregunta-" + pregunta.id;
+    contenedor.id = pregunta.id;
 
     const h2 = document.createElement("h2");
     h2.textContent = (pregunta.id + 1) + " - " + pregunta.pregunta;
     contenedor.appendChild(h2);
 
     const opciones = document.createElement("div");
-    opciones.className = "opciones";
+    
+    // Crear las opciones de respuesta
+    opciones.appendChild(crearRadioButton(pregunta.id, "0", pregunta.op0));
+    opciones.appendChild(crearRadioButton(pregunta.id, "1", pregunta.op1));
+    opciones.appendChild(crearRadioButton(pregunta.id, "2", pregunta.op2));
+    opciones.appendChild(crearRadioButton(pregunta.id, "3", pregunta.op3));
 
-    for (let i = 0; i < 3; i++) { // Suponemos que cada pregunta tiene 3 opciones
-        const label = crearLabel(i, pregunta[`op${i}`]);
-        opciones.appendChild(label);
-    }
 
     contenedor.appendChild(opciones);
     document.getElementById("juego").appendChild(contenedor);
 }
 
-function crearLabel(num, txtOpcion) {
-    const label = document.createElement("label");
+// Función para crear un radio button
+function crearRadioButton(idPregunta, valor, texto) {
+    const div = document.createElement("div");
 
     const input = document.createElement("input");
     input.type = "radio";
-    input.name = "p" + numPregunta; // Cada pregunta tiene un grupo único
-    input.value = num;
+    input.name = "p" + idPregunta;  // Asignar el mismo nombre a todas las opciones de la misma pregunta
+    input.value = valor;  // Valor de la opción (0, 1, 2)
+    input.id = "opcion_" + idPregunta + "_" + valor;
 
-    // Usar closure para asociar correctamente la pregunta y la opción
-    input.onclick = (function (preguntaId, opcionSeleccionada) {
-        return function () {
-            seleccionar(preguntaId, opcionSeleccionada);
-        };
-    })(numPregunta, num);
+    // Añadir evento para guardar la respuesta seleccionada
+    input.addEventListener("change", () => {
+        respuestas[idPregunta] = valor; // Guardar la opción seleccionada en el array de respuestas
+    });
+
+    // Crear el label con el texto
+    const label = document.createElement("label");
+    label.setAttribute("for", input.id);
+    label.textContent = texto;
+
+    // Agregar el input y el label al div
+    div.appendChild(input);
+    div.appendChild(label);
+
+    return div;
+}
+
+// Función para verificar las respuestas
+let resultado = document.getElementById("resultado");
+resultado.onclick = function() {
+    cantiCorrectas = 0;
+
+    for (let i = 0; i < bd_juego.length; i++) {
+        const pregunta = bd_juego[i];
+        const respuestaSeleccionada = respuestas[i]; // Usar el array de respuestas
+
+        if (respuestaSeleccionada == pregunta.correcta) {
+            cantiCorrectas++;
+            let idcorreccion = "p" + i + pregunta.correcta;
+            document.getElementById(i).className = "contenedor-pregunta correcta";
+            document.getElementById(idcorreccion).innerHTML = "&check;";
+            document.getElementById(idcorreccion).className = "acierto";
+        } else {
+            let id = "p" + i + respuestaSeleccionada;
+            let idcorreccion = "p" + i + pregunta.correcta;
+            document.getElementById(i).className = "contenedor-pregunta incorrecta";
+            document.getElementById(id).innerHTML = "&#x2715;";  // Mostrar un "X" si la respuesta es incorrecta
+            document.getElementById(id).className = "no-acierto";
+            document.getElementById(idcorreccion).innerHTML = "&check;";  // Mostrar un "check" en la opción correcta
+            document.getElementById(idcorreccion).className = "acierto";
+        }
+    }
+    mostrarMensajeFinal();
+};
+
+// Mostrar mensaje final con la cantidad de respuestas correctas
+function mostrarMensajeFinal() {
+    const totalPreguntas = bd_juego.length;
+    const mensajeFinal = document.createElement("div");
+    mensajeFinal.style.textAlign = "center";
+    mensajeFinal.style.marginTop = "20px";
+    mensajeFinal.style.fontSize = "24px";
+    mensajeFinal.style.fontWeight = "bold";
+
+    if (cantiCorrectas === totalPreguntas) {
+        mensajeFinal.textContent = "¡Carajo si le Sabes :D!";
+    } else {
+        mensajeFinal.textContent = "¡Ups, Echale coquito :,c!";
+    }
+
+    document.getElementById("juego").appendChild(mensajeFinal);
+}
+
+// Cargar todas las preguntas al inicio
+for (let i = 0; i < bd_juego.length; i++) {
+    cargarPreguntas();
+    numPregunta++;
+}
+
+// Cargar preguntas adicionales con audios
+function cargarPreguntasAdicionales10() {
+    const bd_juego_adicional = [
+        {
+            id: 100,
+            pregunta: "SCRIPT 1",
+            audio: "audio1.MPEG", // Ruta al audio
+            op0: "a) Tom is not in.",
+            op1: "b) Sarah is not there.",
+            op2: "c) Sarah called Tom.",
+            op3: "d) Tom called Sarah.",
+            correcta: "1",
+        },
+        {
+            id: 101,
+            pregunta: "SCRIPT 2",
+            audio: "audio2.MPEG", // Ruta al audio
+            op0: "a) The tour is about modern civilizations",
+            op1: "b) The exhibit is about recent artifacts.",
+            op2: "c) The museum is closed.",
+            op3: "d) Ancient civilizations left artifacts.",
+            correcta: "3", 
+        },
+        {
+            id: 102,
+            pregunta: "SCRIPT 3",
+            audio: "audio3.MPEG" ,
+            op0: "a) The woman doesn't like the new restaurant.",
+            op1: "b) The man should avoid the new restaurant.",
+            op2: "c) The woman recommends trying the new restaurant.",
+            op3: "d) The man thinks the food is terrible",
+            correcta: "2", 
+        },
+        {
+            id: 103,
+            pregunta: "SCRIPT 4",
+            audio: "audio4.MPEG" ,
+            op0: "a) The sale is at ABC Electronics.",
+            op1: "b) The sale is only on old gadgets.",
+            op2: "c) The sale is next month.",
+            op3: "d) The sale is on this weekend.",
+            correcta: "3", 
+        },
+        {
+            id: 104,
+            pregunta: "SCRIPT 5",
+            audio: "audio5.MPEG" ,
+            op0: "a) The candidate has no experience in project management.",
+            op1: "b) The candidate's project was late and over budget.",
+            op2: "c) The candidate led a successful project in the past.",
+            op3: "d) The candidate is not willing to talk about their experience",
+            correcta: "1", 
+        },
+    ];
+
+    bd_juego_adicional.forEach((pregunta, index) => {
+        const contenedor = document.createElement("div");
+        contenedor.className = "contenedor-pregunta";
+        contenedor.id = "adicional-" + pregunta.id;
+
+        const h2 = document.createElement("h2");
+        h2.textContent = (pregunta.id + 1) + " - " + pregunta.pregunta;
+        contenedor.appendChild(h2);
+
+        // Crear y agregar el elemento de audio
+        const audio = document.createElement("audio");
+        audio.src = pregunta.audio;  // Ruta al archivo de audio
+        audio.controls = true;  // Permitir que el usuario controle la reproducción
+        contenedor.appendChild(audio);
+        
+        // Crear las opciones de respuesta
+        const opciones = document.createElement("div");
+        opciones.appendChild(crearRadioButton(pregunta.id, "0", pregunta.op0));
+        opciones.appendChild(crearRadioButton(pregunta.id, "1", pregunta.op1));
+        opciones.appendChild(crearRadioButton(pregunta.id, "2", pregunta.op2));
+        opciones.appendChild(crearRadioButton(pregunta.id, "3", pregunta.op3));
+
+        contenedor.appendChild(opciones);
+
+        // Añadir la pregunta al contenedor principal
+        document.getElementById("juego-adicional10").appendChild(contenedor);
+    });
+}
+
+cargarPreguntasAdicionales10();
+
+// Objeto global para almacenar las respuestas seleccionadas
+let respuestasSeleccionadas = {};
+
+// Función para crear los labels (como ya tenías)
+function crearLabel(valor, texto, preguntaId) {
+    const label = document.createElement("label");
+    label.setAttribute("for", "opcion" + valor);
+    label.textContent = texto;
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "pregunta-" + preguntaId;  // Asegúrate de que el nombre de cada radio sea único por pregunta
+    input.id = "opcion" + valor;
+    input.value = valor;
+
+    // Verifica si la respuesta fue previamente seleccionada
+    if (respuestasSeleccionadas[preguntaId] === valor) {
+        input.checked = true;  // Si la respuesta fue seleccionada, marcarla como checked
+    }
+
+    // Evento para guardar la respuesta seleccionada en la variable global
+    input.addEventListener("change", function () {
+        respuestasSeleccionadas[preguntaId] = valor;
+    });
+
+    label.appendChild(input);
+    return label;
+}
+
+// Función para cargar las preguntas del examen
+function cargarPreguntasAdicionales11() {
+    const bd_juego_adicional = [
+        {
+            id: 106,
+            pregunta: "What was the weather like during the day in the park?",
+            op0: "a) Rainy",
+            op1: "b) Cloudy",
+            op2:"c) Sunny with a gentle breeze",
+            op3:"d) Windy",
+             correcta: "2"
+        },
+        {
+            id: 107,
+            pregunta: "What did the group do when they first entered the park?",
+            op0: "a) Played frisbee",
+            op1: "b) Had a picnic",
+            op2:"c) Flew kites",
+            op3:"d) Listened to music",
+             correcta: "1"
+        },
+        {
+            id: 108,
+            pregunta: " What did the group observe while having their picnic?",
+            op0: "a) People playing frisbee",
+            op1: "b)  Musicians playing sad tunes",
+            op2:"c) Families enjoying the day",
+            op3:"d) Ducks swimming in the lake",
+             correcta: "2"
+        },
+        {
+            id: 109,
+            pregunta: "What added to the joyful atmosphere in the park?",
+            op0: "a) Rain",
+            op1: "b) Sad music",
+            op2:"c) Cheerful tunes played by musicians",
+            op3:"d)  Silent surroundings",
+             correcta: "2"
+        },
+        {
+            id: 110,
+            pregunta: "How did the day end for the group in the park?",
+            op0: "a) They stayed overnight",
+            op1: "b) They explored the park further",
+            op2:"c) They joined a group of musicians",
+            op3:"d) They gathered their belongings and headed home",
+             correcta: "3"
+        },
+        
+    ];
+
+    bd_juego_adicional.forEach((pregunta) => {
+        const contenedor = document.createElement("div");
+        contenedor.className = "contenedor-pregunta";
+        contenedor.id = "adicional-" + pregunta.id;
+
+        const h2 = document.createElement("h2");
+        h2.textContent = pregunta.id + " - " + pregunta.pregunta;  // Aquí no sumes 1 si no lo deseas
+        contenedor.appendChild(h2);
+
+        const opciones = document.createElement("div");
+        const label1 = crearLabel("0", pregunta.op0, pregunta.id);
+        const label2 = crearLabel("1", pregunta.op1, pregunta.id);
+        const label3 = crearLabel("2", pregunta.op2, pregunta.id);
+        const label4 = crearLabel("3", pregunta.op3, pregunta.id);
+
+        opciones.appendChild(label1);
+        opciones.appendChild(label2);
+        opciones.appendChild(label3);
+        opciones.appendChild(label4);
+
+        contenedor.appendChild(opciones);
+        document.getElementById("juego-adicional11").appendChild(contenedor);
+    });
+}
+
+// Asegúrate de que esta función se llame al fin    al del archivo JavaScript
+cargarPreguntasAdicionales11();
+
 
     const span = document.createElement("span");
     span.textContent = txtOpcion;
