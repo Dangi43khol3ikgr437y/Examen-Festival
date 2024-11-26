@@ -9,23 +9,29 @@
 </head>
 <body>
     <h1>Examen de Festival Academico hola</h1>
-    <div class="contenedor-datos">
-        <h4>Fill out the following fields (required)</h4>
-        <div>
-            <label for="nombre">Nombre completo:</label>
-            <input type="text" id="nombre" placeholder="Escribe tu nombre ">
-        </div>
-        <div>
-            <label for="grupo">Grupo:</label>
-            <input type="text" id="grupo" placeholder="Escribe tu grupo">
-        </div>
-        <div>
-            <label for="aciertos">Aciertos: </label>
-            <input type="number" id="aciertos" readonly>
+    
+    <!-- Aquí empiezan las preguntas -->
+    <div class="contenedor-pregunta">
+        <!-- Tu pregunta 105 aquí -->
+        <h3>Pregunta 105: </h3>
+        <p>¿Cuál es tu película favorita?</p>
+        <div class="opciones">
+            <div>
+                <input type="radio" id="opcion1" name="pregunta105" value="opcion1">
+                <label for="opcion1">Opción 1</label>
+            </div>
+            <div>
+                <input type="radio" id="opcion2" name="pregunta105" value="opcion2">
+                <label for="opcion2">Opción 2</label>
+            </div>
+            <div>
+                <input type="radio" id="opcion3" name="pregunta105" value="opcion3">
+                <label for="opcion3">Opción 3</label>
+            </div>
         </div>
     </div>
 
-    <!-- Aquí está el contenedor de texto que me pediste -->
+    <!-- Aquí aparece el texto de "A Day in the Park" debajo de la pregunta 105 -->
     <div class="contenedor-texto">
         <h2>A Day in the Park</h2>
         <p>Last Sunday, my friends and I decided to spend a relaxing day in the park. The weather was perfect, with clear skies and a gentle breeze. As we entered the park, we were greeted by the sound of children laughing and playing.</p>
@@ -35,7 +41,6 @@
         <p>As the sun began to set, we gathered our belongings and headed home. It was a day filled with laughter, good food, and the simple pleasures of nature. We all agreed that the park is a wonderful place to escape the hustle and bustle of daily life.</p>
     </div>
 
-    <!-- Otros elementos -->
     <div id="juego"></div>
     <button id="enviarResultados">Enviar Resultados</button>
 
