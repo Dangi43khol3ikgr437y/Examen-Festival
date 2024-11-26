@@ -1086,7 +1086,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Hubo un error al enviar los resultados.");
             }
         } catch (error) {
-            alert("Error en la conexión. Intenta de nuevo.");
+            alert("Hasta pronto");
         }
     };
 });
