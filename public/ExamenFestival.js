@@ -838,20 +838,19 @@ const bd_juego = [
         op3:"d) ",
          correcta: "0"
     },
-// Base de datos de preguntas
+
     {
         id: 99,
         pregunta: "MODALS: Choose the correct modal verb for expressing a strong obligation.",
         op0: "a) can",
         op1: "b) must",
         op2: "c) may",
-        op3: "d) ",
         correcta: "1"
     },
     {
         id: 100,
         pregunta: "SCRIPT 1",
-        audio: "audio1.mp3",
+        audio: "Audio/audio1.mp3",
         op0: "a) Tom is not in.",
         op1: "b) Sarah is not there.",
         op2: "c) Sarah called Tom.",
@@ -861,7 +860,7 @@ const bd_juego = [
     {
         id: 101,
         pregunta: "SCRIPT 2",
-        audio: "audio2.mp3",
+        audio: "Audio/audio2.mp3",
         op0: "a) The tour is about modern civilizations",
         op1: "b) The exhibit is about recent artifacts.",
         op2: "c) The museum is closed.",
@@ -871,17 +870,16 @@ const bd_juego = [
     {
         id: 102,
         pregunta: "SCRIPT 3",
-        audio: "audio3.mp3",
+        audio: "Audio/audio3.mp3",
         op0: "a) The woman doesn't like the new restaurant.",
         op1: "b) The man should avoid the new restaurant.",
         op2: "c) The woman recommends trying the new restaurant.",
-        op3: "d) The man thinks the food is terrible.",
         correcta: "2",
     },
     {
         id: 103,
         pregunta: "SCRIPT 4",
-        audio: "audio4.mp3",
+        audio: "Audio/audio4.mp3",
         op0: "a) The sale is at ABC Electronics.",
         op1: "b) The sale is only on old gadgets.",
         op2: "c) The sale is next month.",
@@ -891,68 +889,69 @@ const bd_juego = [
     {
         id: 104,
         pregunta: "SCRIPT 5",
-        audio: "audio5.mp3",
+        audio: "Audio/audio5.mp3",
         op0: "a) The candidate has no experience in project management.",
         op1: "b) The candidate's project was late and over budget.",
         op2: "c) The candidate led a successful project in the past.",
-        op3: "d) The candidate is not willing to talk about their experience.",
         correcta: "1",
     },
 ];
 
 let respuestas = [];
 let cantiCorrectas = 0;
-let numPregunta = 0;
 
 // Cargar preguntas dinámicamente
 function cargarPreguntas() {
-    const pregunta = bd_juego[numPregunta];
-    const contenedor = document.createElement("div");
-    contenedor.className = "contenedor-pregunta";
-    contenedor.id = "pregunta-" + pregunta.id;
+    const contenedorJuego = document.getElementById("juego");
 
-    const h2 = document.createElement("h2");
-    h2.textContent = (pregunta.id + 1) + " - " + pregunta.pregunta;
-    contenedor.appendChild(h2);
+    // Limpiar el contenedor por si ya había preguntas cargadas previamente
+    contenedorJuego.innerHTML = "";
 
-    // Verificar si la pregunta tiene un archivo de audio y agregar el reproductor si es necesario
-    if (pregunta.audio) {
-        const audio = document.createElement("audio");
-        audio.controls = true;
-        audio.src = pregunta.audio;
-        audio.style.display = "block"; // Para asegurarte de que se muestre correctamente
-        contenedor.appendChild(audio);
-    }
+    // Recorrer la base de datos y crear los elementos de las preguntas
+    bd_juego.forEach((pregunta, index) => {
+        const contenedor = document.createElement("div");
+        contenedor.className = "contenedor-pregunta";
+        contenedor.id = "pregunta-" + pregunta.id;
 
-    const opciones = document.createElement("div");
-    opciones.className = "opciones";
+        const h2 = document.createElement("h2");
+        h2.textContent = `${index + 1} - ${pregunta.pregunta}`;
+        contenedor.appendChild(h2);
 
-    // Determinar dinámicamente cuántas opciones tiene la pregunta
-    for (let i = 0; i < 4; i++) { // Máximo 4 opciones
-        if (pregunta[`op${i}`]) { // Verificar si la opción existe
-            const label = crearLabel(i, pregunta[`op${i}`]);
-            opciones.appendChild(label);
+        // Verificar si la pregunta tiene un archivo de audio
+        if (pregunta.audio) {
+            const audio = document.createElement("audio");
+            audio.controls = true;
+            audio.src = pregunta.audio;
+            audio.style.display = "block"; // Mostrarlo correctamente
+            contenedor.appendChild(audio);
         }
-    }
 
-    contenedor.appendChild(opciones);
-    document.getElementById("juego").appendChild(contenedor);
+        const opciones = document.createElement("div");
+        opciones.className = "opciones";
+
+        // Determinar dinámicamente cuántas opciones tiene la pregunta
+        for (let i = 0; i < 4; i++) {
+            if (pregunta[`op${i}`]) { // Verificar si la opción existe
+                const label = crearLabel(index, i, pregunta[`op${i}`]);
+                opciones.appendChild(label);
+            }
+        }
+
+        contenedor.appendChild(opciones);
+        contenedorJuego.appendChild(contenedor);
+    });
 }
 
-function crearLabel(num, txtOpcion) {
+function crearLabel(numPregunta, numOpcion, txtOpcion) {
     const label = document.createElement("label");
 
     const input = document.createElement("input");
     input.type = "radio";
-    input.name = "p" + numPregunta; // Cada pregunta tiene un grupo único
-    input.value = num;
+    input.name = `p${numPregunta}`; // Cada pregunta tiene un grupo único
+    input.value = numOpcion;
 
     // Usar closure para asociar correctamente la pregunta y la opción
-    input.onclick = (function (preguntaId, opcionSeleccionada) {
-        return function () {
-            seleccionar(preguntaId, opcionSeleccionada);
-        };
-    })(numPregunta, num);
+    input.onclick = () => seleccionar(numPregunta, numOpcion);
 
     const span = document.createElement("span");
     span.textContent = txtOpcion;
@@ -972,14 +971,13 @@ function seleccionar(pos, opElegida) {
 function calcularResultados() {
     cantiCorrectas = 0; // Reinicia los aciertos
 
-    for (let i = 0; i < bd_juego.length; i++) {
-        const pregunta = bd_juego[i];
-        console.log(`Pregunta ${i}: Correcta: ${pregunta.correcta}, Elegida: ${respuestas[i]}`);
+    bd_juego.forEach((pregunta, index) => {
+        console.log(`Pregunta ${index}: Correcta: ${pregunta.correcta}, Elegida: ${respuestas[index]}`);
 
-        if (pregunta.correcta == respuestas[i]) {
+        if (pregunta.correcta == respuestas[index]) {
             cantiCorrectas++;
         }
-    }
+    });
 
     document.getElementById("aciertos").value = cantiCorrectas; // Mostrar el total
     console.log(`Total respuestas correctas: ${cantiCorrectas}`);
@@ -997,14 +995,11 @@ function verificarRespuestas() {
 }
 
 // Manejo del botón "Enviar Resultados"
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     // Cargar preguntas al iniciar
-    for (let i = 0; i < bd_juego.length; i++) {
-        cargarPreguntas();
-        numPregunta++;
-    }
+    cargarPreguntas();
 
-    const boton = document.getElementById('enviarResultados');
+    const boton = document.getElementById("enviarResultados");
     if (!boton) {
         console.error('El botón "enviarResultados" no existe en el DOM.');
         return;
@@ -1017,8 +1012,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         calcularResultados();
 
-        const userName = document.getElementById('nombre').value.trim();
-        const userGroup = document.getElementById('grupo').value.trim();
+        const userName = document.getElementById("nombre").value.trim();
+        const userGroup = document.getElementById("grupo").value.trim();
 
         if (!userName || !userGroup) {
             alert("Por favor, completa todos los campos.");
@@ -1026,27 +1021,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const data = { nombre: userName, grupo: userGroup, aciertos: cantiCorrectas };
-        localStorage.setItem('userName', userName);
-        localStorage.setItem('userGroup', userGroup);
-        localStorage.setItem('cantiCorrectas', cantiCorrectas);
+        localStorage.setItem("userName", userName);
+        localStorage.setItem("userGroup", userGroup);
+        localStorage.setItem("cantiCorrectas", cantiCorrectas);
 
         console.log("Enviando datos:", data);
 
         try {
-            const response = await fetch('http://localhost:3000/resultados', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+            const response = await fetch("http://localhost:3000/resultados", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
             });
 
             if (response.ok) {
-                alert('Resultados enviados correctamente.');
+                alert("Resultados enviados correctamente.");
             } else {
-                alert('Error al enviar los resultados.');
+                alert("Error al enviar los resultados.");
             }
         } catch (error) {
-            console.error('Error al conectar con el servidor:', error);
-            alert('Error al conectar con el servidor.');
+            console.error("Error al conectar con el servidor:", error);
+            alert("Error al conectar con el servidor.");
         }
     };
 });
