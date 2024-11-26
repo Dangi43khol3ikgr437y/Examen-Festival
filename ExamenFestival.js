@@ -1,6 +1,6 @@
 const bd_juego = [
     {
-        
+
         id: 0,
         pregunta: " She______ ready for the meeting?",
         op0: "a) Am",
@@ -18,102 +18,102 @@ const bd_juego = [
     },
     {
         id: 2,
-        pregunta: "3 The sun _____ in the east?",
+        pregunta: "The sun _____ in the east?",
         op0: "a) Rises",
         op1: "b) Rise",
         op2: "c) Rising",
         correcta: "0"
     },
     {
-        id:3,
-        pregunta: " Charlie _______ on weekends", 
+        id: 3,
+        pregunta: " Charlie _______ on weekends",
         op0: "a) Doesn't work",
         op1: "b) Doesn't works",
         op2: "c) Don't work",
         correcta: "0"
     },
     {
-        id:4,
-        pregunta: " _______ is your best friend? Maria", 
+        id: 4,
+        pregunta: " _______ is your best friend? Maria",
         op0: "a) Why",
         op1: "b) When",
         op2: "c) Who",
         correcta: "2"
     },
     {
-        id:5,
-        pregunta: " _______ do you get to school? I get to school by bus", 
+        id: 5,
+        pregunta: " _______ do you get to school? I get to school by bus",
         op0: "a) How",
         op1: "b) What",
         op2: "c) Where",
         correcta: "0"
     },
     {
-        id:6,
-        pregunta: " The cat is licking _______ paws.", 
+        id: 6,
+        pregunta: " The cat is licking _______ paws.",
         op0: "a) Her",
         op1: "b) Its",
         op2: "c) His",
         correcta: "1"
     },
     {
-        id:7,
-        pregunta: " The ______ chocolate.", 
+        id: 7,
+        pregunta: " The ______ chocolate.",
         op0: "a) Hot, delicious",
         op1: "b) Delicius, hot",
         op2: "c) Hottest, delicious",
         correcta: "1"
     },
     {
-        id:8,
-        pregunta: " _____ front yard is beautiful.", 
+        id: 8,
+        pregunta: " _____ front yard is beautiful.",
         op0: "a) A",
         op1: "b) The",
         op2: "c) An",
         correcta: "1"
     },
     {
-        id:9,
-        pregunta: " We have _____ hour to finish the Project.", 
+        id: 9,
+        pregunta: " We have _____ hour to finish the Project.",
         op0: "a) A",
         op1: " b) The",
         op2: "c) An",
         correcta: "2"
     },
     {
-        id:10,
-        pregunta: " _____ bags of chips are there on the table?", 
+        id: 10,
+        pregunta: " _____ bags of chips are there on the table?",
         op0: "a) How many",
         op1: "b) How much",
         op2: "c) Is there",
         correcta: "0"
     },
     {
-        id:11,
-        pregunta: " ______ chicken do we have?", 
+        id: 11,
+        pregunta: " ______ chicken do we have?",
         op0: "a) How Many",
         op1: "b)  How Much",
         op2: "c) Are there",
         correcta: "1"
     },
     {
-        id:12,
-        pregunta: " How many _____ do you have?", 
+        id: 12,
+        pregunta: " How many _____ do you have?",
         op0: "a) Childs",
         op1: "b) Childrens",
         op2: "c) Children",
         correcta: "2"
     },
     {
-        id:13,
-        pregunta: " The police officer is ___ the cars.", 
+        id: 13,
+        pregunta: " The police officer is ___ the cars.",
         op0: "a) Stoping",
         op1: "b) Stopping",
         op2: "c) Stops",
         correcta: "1"
     },
     {
-        id:14,
+        id: 14,
         pregunta: " I live ____ Oxford Street ____ London.",
         op0: "a) On / In",
         op1: "b) In / On",
@@ -121,78 +121,77 @@ const bd_juego = [
         correcta: "0"
     },
     {
-        id:15,
-        pregunta: " Don't make ___ noise. She wants to get ___ sleep.", 
+        id: 15,
+        pregunta: " Don't make ___ noise. She wants to get ___ sleep.",
         op0: "a) Any / Some",
         op1: "b) Some / Any",
         op2: "c) Many / A lot",
         correcta: "0"
     },
     {
-        id:16,
-        pregunta: " 'Hi, Chris. ____ is my friend Jona.'' Hi, Jona. Nice to meet you'", 
+        id: 16,
+        pregunta: " 'Hi, Chris. ____ is my friend Jona.'' Hi, Jona. Nice to meet you'",
         op0: "a) That",
         op1: "b) These",
         op2: "c) This",
         correcta: "0"
     },
     {
-        id:17,
-        pregunta: " I need to find Mandy. I took ____ jacket by mistake. ", 
+        id: 17,
+        pregunta: " I need to find Mandy. I took ____ jacket by mistake. ",
         op0: "a) Are / Aren't",
         op1: "b) Is / Aren't ",
         op2: "c) Is / Isn't",
         correcta: "2"
     },
     {
-        id:18,
-        pregunta: " I need to find Mandy. I took _____ jacket by mistake. ", 
+        id: 18,
+        pregunta: " I need to find Mandy. I took _____ jacket by mistake. ",
         op0: "a) Her's",
         op1: "b) Its",
         op2: "c) Her",
         correcta: "2"
     },
     {
-        id:19,
-        pregunta: " Do you ______ the avocado? ", 
+        id: 19,
+        pregunta: " Do you ______ the avocado? ",
         op0: "a) Like",
         op1: "b) Likes",
         op2: "c) Linking",
         correcta: "0"
     },
     {
-        id:20,
-        pregunta: ".- He _____ swim. He's afraid of water. ", 
+        id: 20,
+        pregunta: ".- He _____ swim. He's afraid of water. ",
         op0: "a) Can",
         op1: "b) Cans",
         op2: "c) Can't",
         correcta: "2"
     },
     {
-        id:21,
-        pregunta: " We should _______ begin tests in 48 hours", 
+        id: 21,
+        pregunta: " We should _______ begin tests in 48 hours",
         op0: "a) Be able to",
         op1: "b) Will be able to",
         op2: "c) Are able to",
         correcta: "1"
     },
     {
-        id:22,
-        pregunta: " They _______ get home before midnigth. ", 
+        id: 22,
+        pregunta: " They _______ get home before midnigth. ",
         op0: "a) Go",
         op1: "b) Never",
         op2: "c) Always go",
         correcta: "2"
     },
     {
-        id:23,
-        pregunta: " The children _______ stay up late. ", 
+        id: 23,
+        pregunta: " The children _______ stay up late. ",
         op0: "a) Sometimes ",
         op1: "b)  Rarely go",
         op2: "c) Go",
         correcta: "0"
-    },
-    {
+    },{
         id: 24,
         pregunta: " Betty rarely _______ in her rom working.",
         op0: "a) was",
@@ -848,14 +847,16 @@ const bd_juego = [
         op3:"d) ",
          correcta: "1"
     },
+
+
 ];
 
-// Respuestas y contador de aciertos
+
 let respuestas = [];
 let cantiCorrectas = 0;
 let numPregunta = 0;
 
-// Función para cargar preguntas normales
+// Cargar preguntas dinámicamente
 function cargarPreguntas() {
     const pregunta = bd_juego[numPregunta];
     const contenedor = document.createElement("div");
@@ -867,179 +868,124 @@ function cargarPreguntas() {
     contenedor.appendChild(h2);
 
     const opciones = document.createElement("div");
+    opciones.className = "opciones";
 
-    // Crear las opciones de respuesta
-    opciones.appendChild(crearRadioButton(pregunta.id, "0", pregunta.op0));
-    opciones.appendChild(crearRadioButton(pregunta.id, "1", pregunta.op1));
-    opciones.appendChild(crearRadioButton(pregunta.id, "2", pregunta.op2));
+    for (let i = 0; i < 3; i++) { // Suponemos que cada pregunta tiene 3 opciones
+        const label = crearLabel(i, pregunta[`op${i}`]);
+        opciones.appendChild(label);
+    }
 
     contenedor.appendChild(opciones);
     document.getElementById("juego").appendChild(contenedor);
 }
 
-// Función para crear un radio button
-function crearRadioButton(idPregunta, valor, texto) {
-    const div = document.createElement("div");
+function crearLabel(num, txtOpcion) {
+    const label = document.createElement("label");
 
     const input = document.createElement("input");
     input.type = "radio";
-    input.name = "p" + idPregunta;  // Asignar el mismo nombre a todas las opciones de la misma pregunta
-    input.value = valor;  // Valor de la opción (0, 1, 2)
-    input.id = "opcion_" + idPregunta + "_" + valor;
+    input.name = "p" + numPregunta; // Cada pregunta tiene un grupo único
+    input.value = num;
 
-    // Añadir evento para guardar la respuesta seleccionada
-    input.addEventListener("change", () => {
-        respuestas[idPregunta] = valor; // Guardar la opción seleccionada en el array de respuestas
-    });
+    // Usar closure para asociar correctamente la pregunta y la opción
+    input.onclick = (function (preguntaId, opcionSeleccionada) {
+        return function () {
+            seleccionar(preguntaId, opcionSeleccionada);
+        };
+    })(numPregunta, num);
 
-    // Crear el label con el texto
-    const label = document.createElement("label");
-    label.setAttribute("for", input.id);
-    label.textContent = texto;
+    const span = document.createElement("span");
+    span.textContent = txtOpcion;
 
-    // Agregar el input y el label al div
-    div.appendChild(input);
-    div.appendChild(label);
-
-    return div;
+    label.appendChild(input);
+    label.appendChild(span);
+    return label;
 }
 
-// Función para verificar las respuestas
-let resultado = document.getElementById("resultado");
-resultado.onclick = function() {
-    cantiCorrectas = 0;
+// Guardar la respuesta seleccionada
+function seleccionar(pos, opElegida) {
+    respuestas[pos] = opElegida;
+    console.log(`Respuesta seleccionada para la pregunta ${pos}: ${opElegida}`);
+}
+// Calcular resultados correctos
+function calcularResultados() {
+    cantiCorrectas = 0; // Reinicia los aciertos
 
     for (let i = 0; i < bd_juego.length; i++) {
         const pregunta = bd_juego[i];
-        const respuestaSeleccionada = respuestas[i]; // Usar el array de respuestas
+        console.log(`Pregunta ${i}: Correcta: ${pregunta.correcta}, Elegida: ${respuestas[i]}`);
 
-        if (respuestaSeleccionada == pregunta.correcta) {
+        if (pregunta.correcta == respuestas[i]) {
             cantiCorrectas++;
-            let idcorreccion = "p" + i + pregunta.correcta;
-            document.getElementById(i).className = "contenedor-pregunta correcta";
-            document.getElementById(idcorreccion).innerHTML = "&check;";
-            document.getElementById(idcorreccion).className = "acierto";
-        } else {
-            let id = "p" + i + respuestaSeleccionada;
-            let idcorreccion = "p" + i + pregunta.correcta;
-            document.getElementById(i).className = "contenedor-pregunta incorrecta";
-            document.getElementById(id).innerHTML = "&#x2715;";  // Mostrar un "X" si la respuesta es incorrecta
-            document.getElementById(id).className = "no-acierto";
-            document.getElementById(idcorreccion).innerHTML = "&check;";  // Mostrar un "check" en la opción correcta
-            document.getElementById(idcorreccion).className = "acierto";
         }
     }
-    mostrarMensajeFinal();
-};
 
-// Mostrar mensaje final con la cantidad de respuestas correctas
-function mostrarMensajeFinal() {
-    const totalPreguntas = bd_juego.length;
-    const mensajeFinal = document.createElement("div");
-    mensajeFinal.style.textAlign = "center";
-    mensajeFinal.style.marginTop = "20px";
-    mensajeFinal.style.fontSize = "24px";
-    mensajeFinal.style.fontWeight = "bold";
+    document.getElementById("aciertos").value = cantiCorrectas; // Mostrar el total
+    console.log(`Total respuestas correctas: ${cantiCorrectas}`);
+}
 
-    if (cantiCorrectas === totalPreguntas) {
-        mensajeFinal.textContent = "¡Carajo si le Sabes :D!";
-    } else {
-        mensajeFinal.textContent = "¡Ups, Echale coquito :,c!";
+// Verificar que todas las preguntas estén respondidas
+function verificarRespuestas() {
+    for (let i = 0; i < bd_juego.length; i++) {
+        if (respuestas[i] === undefined) {
+            alert(`Por favor, responde la pregunta ${i + 1}.`);
+            return false;
+        }
+    }
+    return true;
+}
+
+// Manejo del botón "Enviar Resultados"
+document.addEventListener('DOMContentLoaded', function () {
+    // Cargar preguntas al iniciar
+    for (let i = 0; i < bd_juego.length; i++) {
+        cargarPreguntas();
+        numPregunta++;
     }
 
-    document.getElementById("juego").appendChild(mensajeFinal);
-}
+    const boton = document.getElementById('enviarResultados');
+    if (!boton) {
+        console.error('El botón "enviarResultados" no existe en el DOM.');
+        return;
+    }
 
-// Función para cargar preguntas adicionales con audio
-function cargarPreguntasAdicionales() {
-    const bd_juego_adicional = [
-        {
-            id: 100,
-            pregunta: "SCRIPT 1",
-            audio: "audio1.MPEG", // Ruta al audio
-            op0: "a) Tom is not in.",
-            op1: "b) Sarah is not there.",
-            op2: "c) Sarah called Tom.",
-            op3: "d) Tom called Sarah.",
-            correcta: "1",
-        },
-        {
-            id: 101,
-            pregunta: "SCRIPT 2",
-            audio: "audio2.MPEG", // Ruta al audio
-            op0: "a) The tour is about modern civilizations",
-            op1: "b) The exhibit is about recent artifacts.",
-            op2: "c) The museum is closed.",
-            op3: "d) Ancient civilizations left artifacts.",
-            correcta: "3",
-        },
-        {
-            id: 102,
-            pregunta: "SCRIPT 3",
-            audio: "audio3.MPEG" ,
-            op0: "a) The woman doesn't like the new restaurant.",
-            op1: "b) The man should avoid the new restaurant.",
-            op2: "c) The woman recommends trying the new restaurant.",
-            op3: "d) The man thinks the food is terrible",
-            correcta: "2",
-        },
-        {
-            id: 103,
-            pregunta: "SCRIPT 4",
-            audio: "audio4.MPEG" ,
-            op0: "a) The sale is at ABC Electronics.",
-            op1: "b) The sale is only on old gadgets.",
-            op2: "c) The sale is next month.",
-            op3: "d) The sale is on this weekend.",
-            correcta: "3",
-        },
-        {
-            id: 104,
-            pregunta: "SCRIPT 5",
-            audio: "audio5.MPEG" ,
-            op0: "a) The candidate has no experience in project management.",
-            op1: "b) The candidate's project was late and over budget.",
-            op2: "c) The candidate led a successful project in the past.",
-            op3: "d) The candidate is not willing to talk about their experience",
-            correcta: "1",
-        },
-    ];
+    boton.onclick = async function () {
+        if (!verificarRespuestas()) {
+            return; // Detener si hay preguntas sin responder
+        }
 
-    bd_juego_adicional.forEach((pregunta) => {
-        const contenedor = document.createElement("div");
-        contenedor.className = "contenedor-pregunta";
-        contenedor.id = "adicional-" + pregunta.id;
+        calcularResultados();
 
-        const h2 = document.createElement("h2");
-        h2.textContent = pregunta.id + " - " + pregunta.pregunta;  // Aquí no sumes 1 si no lo deseas
-        contenedor.appendChild(h2);
+        const userName = document.getElementById('nombre').value.trim();
+        const userGroup = document.getElementById('grupo').value.trim();
 
-        // Crear y agregar el elemento de audio
-        const audio = document.createElement("audio");
-        audio.src = pregunta.audio;  // Ruta al archivo de audio
-        audio.controls = true;  // Permitir que el usuario controle la reproducción
-        contenedor.appendChild(audio);
-        
-        // Crear las opciones de respuesta
-        const opciones = document.createElement("div");
-        opciones.appendChild(crearRadioButton(pregunta.id, "0", pregunta.op0));
-        opciones.appendChild(crearRadioButton(pregunta.id, "1", pregunta.op1));
-        opciones.appendChild(crearRadioButton(pregunta.id, "2", pregunta.op2));
-        opciones.appendChild(crearRadioButton(pregunta.id, "3", pregunta.op3));
+        if (!userName || !userGroup) {
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
 
-        contenedor.appendChild(opciones);
+        const data = { nombre: userName, grupo: userGroup, aciertos: cantiCorrectas };
+        localStorage.setItem('userName', userName);
+        localStorage.setItem('userGroup', userGroup);
+        localStorage.setItem('cantiCorrectas', cantiCorrectas);
 
-        // Añadir la pregunta al contenedor principal
-        document.getElementById("juego-adicional").appendChild(contenedor);
-    });
-}
+        console.log("Enviando datos:", data);
 
-// Cargar todas las preguntas al inicio
-for (let i = 0; i < bd_juego.length; i++) {
-    cargarPreguntas();
-    numPregunta++;
-}
+        try {
+            const response = await fetch('http://localhost:3000/resultados', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
 
-// Cargar preguntas adicionales con audio
-cargarPreguntasAdicionales();
-
+            if (response.ok) {
+                alert('Resultados enviados correctamente.');
+            } else {
+                alert('Error al enviar los resultados.');
+            }
+        } catch (error) {
+            console.error('Error al conectar con el servidor:', error);
+            alert('Error al conectar con el servidor.');
+        }
+    };
+});
