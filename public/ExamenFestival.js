@@ -617,7 +617,6 @@ const bd_juego = [
         op0: "a) She can´t",
         op1: "b) can she",
         op2:"c) can´t she",
-        op3:"d) ",
          correcta: "1"
     },
     {
@@ -626,7 +625,6 @@ const bd_juego = [
         op0: "a) hadn´t she",
         op1: "b) she didn´t",
         op2:"c) didn´t",
-        op3:"d) ",
          correcta: "0"
     },
     {
