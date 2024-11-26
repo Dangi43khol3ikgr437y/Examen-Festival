@@ -601,7 +601,6 @@ const bd_juego = [
         op0: "a) is it",
         op1: "b) isn´t it",
         op2:"c) it is",
-        op3:"d) ",
          correcta: "0"
     },
     {
@@ -610,7 +609,6 @@ const bd_juego = [
         op0: "a) didn´t she",
         op1: "b) wasn´t she",
         op2:"c) did she",
-        op3:"d) ",
          correcta: "0"
     },
     {
@@ -637,7 +635,6 @@ const bd_juego = [
         op0: "a) which",
         op1: "b) that he",
         op2:"c) who",
-        op3:"d) ",
          correcta: "2"
     },
     {
@@ -646,7 +643,6 @@ const bd_juego = [
         op0: "a) that",
         op1: "b) which",
         op2:"c) where",
-        op3:"d) ",
          correcta: "0"
     },
     {
@@ -655,7 +651,6 @@ const bd_juego = [
         op0: "a) who",
         op1: "b) that",
         op2:"c) where",
-        op3:"d) ",
          correcta: "1"
     },
     {
@@ -664,7 +659,6 @@ const bd_juego = [
         op0: "a) that",
         op1: "b) where",
         op2:"c) which",
-        op3:"d) ",
          correcta: "1"
     },
     {
@@ -673,7 +667,6 @@ const bd_juego = [
         op0: "a) gone",
         op1: "b) going",
         op2:"c) went",
-        op3:"d) ",
          correcta: "2"
     },
     {
@@ -682,7 +675,6 @@ const bd_juego = [
         op0: "a) I go to the store",
         op1: "b) I was going to the store",
         op2:"c)  I go to the store every day",
-        op3:"d) ",
          correcta: "1"
     },
     {
@@ -691,7 +683,6 @@ const bd_juego = [
         op0: "a)  She will finish her work before dinner",
         op1: "b) She finishes her work before dinner",
         op2:"c) She had finished her work before dinner",
-        op3:"d) ",
          correcta: "2"
     },
     {
@@ -700,7 +691,6 @@ const bd_juego = [
         op0: "a) have",
         op1: "b) has",
         op2:"c) had",
-        op3:"d) ",
          correcta: "2"
     },
     {
@@ -709,7 +699,6 @@ const bd_juego = [
         op0: "a) am ",
         op1: "b) was",
         op2:"c) were",
-        op3:"d) ",
          correcta: "2"
     },
     {
@@ -718,7 +707,6 @@ const bd_juego = [
         op0: "a) must",
         op1: "b) could",
         op2:"c) would",
-        op3:"d) ",
          correcta: "0"
     },
     {
@@ -727,7 +715,6 @@ const bd_juego = [
         op0: "a) give in",
         op1: "b) give off",
         op2:"c) give up",
-        op3:"d) ",
          correcta: "2"
     },
     {
@@ -736,7 +723,6 @@ const bd_juego = [
         op0: "a)  I studied yesterday",
         op1: "b)  I have studied for the exam ",
         op2:"c) I study every day",
-        op3:"d) ",
          correcta: "1"
     },
     {
@@ -745,7 +731,6 @@ const bd_juego = [
         op0: "a) subject",
         op1: "b) verb",
         op2:"c) adverb",
-        op3:"d) ",
          correcta: "0"
     },
     {
@@ -754,7 +739,6 @@ const bd_juego = [
         op0: "a) He may have lunch with us",
         op1: "b) He might have lunch with us ",
         op2:"c) He may lunch with us",
-        op3:"d) ",
          correcta: "0"
     },
     {
@@ -763,7 +747,6 @@ const bd_juego = [
         op0: "a) swimmed",
         op1: "b) swam",
         op2:"c) swum",
-        op3:"d) ",
          correcta: "1"
     },
     {
@@ -772,7 +755,6 @@ const bd_juego = [
         op0: "a) I have visited Paris last year",
         op1: "b)  I visited Paris last year",
         op2:"c)  I have visited Paris before.",
-        op3:"d) ",
          correcta: "2"
     },
     {
@@ -781,7 +763,6 @@ const bd_juego = [
         op0: "a) knows",
         op1: "b) known",
         op2:"c) knowing",
-        op3:"d) ",
          correcta: "0"
     },
     {
@@ -790,7 +771,6 @@ const bd_juego = [
         op0: "a) should",
         op1: "b)would ",
         op2:"c) might",
-        op3:"d) ",
          correcta: "0"
     },
     {
@@ -799,7 +779,6 @@ const bd_juego = [
         op0: "a) break up",
         op1: "b) bring up",
         op2:"c) bring about",
-        op3:"d) ",
          correcta: "1"
     },
     {
@@ -808,7 +787,6 @@ const bd_juego = [
         op0: "a) have lost",
         op1: "b) had lost",
         op2:"c) has lost",
-        op3:"d) ",
          correcta: "2"
     },
     {
@@ -817,7 +795,6 @@ const bd_juego = [
         op0: "a) eating",
         op1: "b) ate",
         op2:"c) eats",
-        op3:"d) ",
          correcta: "0"
     },
     {
@@ -826,7 +803,6 @@ const bd_juego = [
         op0: "a) with",
         op1: "b) by",
         op2:"c) in",
-        op3:"d) ",
          correcta: "1"
     },
     {
@@ -835,7 +811,6 @@ const bd_juego = [
         op0: "a)  She might go to the party if she finishes her work.",
         op1: "b) She might went to the party last night.",
         op2:"c)  She might go to the party after finishing her work.",
-        op3:"d) ",
          correcta: "0"
     },
 
