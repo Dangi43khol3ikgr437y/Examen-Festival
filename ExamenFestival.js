@@ -916,6 +916,11 @@ function cargarPreguntas() {
     h2.textContent = (pregunta.id + 1) + " - " + pregunta.pregunta;
     contenedor.appendChild(h2);
 
+    const audio = document.createElement("audio");
+    audio.src = pregunta.audio; 
+    audio.controls = true;
+    contenedor.appendChild(audio);
+
     const opciones = document.createElement("div");
     opciones.className = "opciones";
 
