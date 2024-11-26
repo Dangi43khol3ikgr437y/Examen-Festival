@@ -905,6 +905,7 @@ let respuestas = [];
 let cantiCorrectas = 0;
 let numPregunta = 0;
 
+
 // Cargar preguntas dinámicamente
 function cargarPreguntas() {
     const pregunta = bd_juego[numPregunta];
@@ -950,43 +951,6 @@ function crearLabel(num, txtOpcion) {
     label.appendChild(span);
     return label;
 }
-
-function cargarPreguntasEspecificas() {
-    for (let i = 100; i <= 104; i++) {
-        const pregunta = bd_juego.find(p => p.id === i); 
-        if (pregunta) {
-            cargarPreguntaIndividual(pregunta);
-        }
-    }
-}
-
-// Función para cargar cada pregunta individual
-function cargarPreguntaIndividual(pregunta) {
-    const contenedor = document.createElement("div");
-    contenedor.className = "contenedor-pregunta";
-    contenedor.id = "pregunta-" + pregunta.id;
-
-    const h2 = document.createElement("h2");
-    h2.textContent = (pregunta.id + 1) + " - " + pregunta.pregunta;
-    contenedor.appendChild(h2);
-
-    if (pregunta.audio) {
-        const audio = document.createElement("audio");
-        audio.src = pregunta.audio;
-        audio.controls = true;
-        contenedor.appendChild(audio);
-    }
-    }
-
-    contenedor.appendChild(opciones);
-    document.getElementById("juego").appendChild(contenedor);
-}
-
-// Llamada a la función para cargar preguntas específicas
-document.addEventListener('DOMContentLoaded', function () {
-    cargarPreguntasEspecificas();  // Solo carga preguntas 100-104
-});
-
 
 // Guardar la respuesta seleccionada
 function seleccionar(pos, opElegida) {
