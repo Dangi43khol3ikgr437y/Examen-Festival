@@ -1,4 +1,5 @@
 {
+  
   "name": "examen-backend",
   "version": "1.0.0",
   "main": "index.js",
@@ -15,5 +16,8 @@
     "cors": "^2.8.5",
     "express": "^4.21.1",
     "pg": "^8.13.1"
+  },
+  "scripts":{
+  "start": "node server.js"
   }
 }
