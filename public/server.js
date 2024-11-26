@@ -32,15 +32,15 @@ app.post('/resultados', async (req, res) => {
         res.status(500).send('Error al guardar en la base de datos.');
     }
 });
-
 const express = require('express');
+const path = require('path');
 
-// Configuración para servir archivos estáticos desde la carpeta 'public'
-app.use(express.static('public')); // Asegúrate de que la carpeta 'public' contiene tu index.html
+// Servir archivos estáticos desde la carpeta 'public'
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Ruta para la página principal (index.html)
+// Ruta para la página principal
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html'); // Enviar index.html cuando se accede a '/'
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
