@@ -138,7 +138,7 @@ const bd_juego = [
     },
     {
         id: 17,
-        pregunta: " I need to find Mandy. I took ____ jacket by mistake. ",
+        pregunta: " I'm hungry . _______ there any apple in your backpack? No, there______. ",
         op0: "a) Are / Aren't",
         op1: "b) Is / Aren't ",
         op2: "c) Is / Isn't",
