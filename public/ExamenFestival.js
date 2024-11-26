@@ -895,6 +895,52 @@ const bd_juego = [
         op2: "c) The candidate led a successful project in the past.",
         correcta: "1",
     },
+     {
+            id: 106,
+            pregunta: "What was the weather like during the day in the park?",
+            op0: "a) Rainy",
+            op1: "b) Cloudy",
+            op2:"c) Sunny with a gentle breeze",
+            op3:"d) Windy",
+             correcta: "2"
+        },
+        {
+            id: 107,
+            pregunta: "What did the group do when they first entered the park?",
+            op0: "a) Played frisbee",
+            op1: "b) Had a picnic",
+            op2:"c) Flew kites",
+            op3:"d) Listened to music",
+             correcta: "1"
+        },
+        {
+            id: 108,
+            pregunta: " What did the group observe while having their picnic?",
+            op0: "a) People playing frisbee",
+            op1: "b)  Musicians playing sad tunes",
+            op2:"c) Families enjoying the day",
+            op3:"d) Ducks swimming in the lake",
+             correcta: "2"
+        },
+        {
+            id: 109,
+            pregunta: "What added to the joyful atmosphere in the park?",
+            op0: "a) Rain",
+            op1: "b) Sad music",
+            op2:"c) Cheerful tunes played by musicians",
+            op3:"d)  Silent surroundings",
+             correcta: "2"
+        },
+        {
+            id: 110,
+            pregunta: "How did the day end for the group in the park?",
+            op0: "a) They stayed overnight",
+            op1: "b) They explored the park further",
+            op2:"c) They joined a group of musicians",
+            op3:"d) They gathered their belongings and headed home",
+             correcta: "3"
+        },
+    
 ];
 
 let respuestas = [];
