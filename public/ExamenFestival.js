@@ -985,7 +985,7 @@ function cargarPreguntas() {
 
         contenedor.appendChild(opciones);
 
-        // Verificar si la pregunta es la 104 para insertar el texto entre la 104 y la 106
+        // Insertar el texto "A Day in the Park" antes de la pregunta 106
         if (pregunta.id === 106) {
             const textoParque = document.createElement("div");
             textoParque.className = "texto-parque";
@@ -1110,11 +1110,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 alert("Resultados enviados correctamente.");
             } else {
-                alert("Error al enviar los resultados.");
+                alert("Hubo un error al enviar los resultados.");
             }
         } catch (error) {
-            console.error("Error al conectar con el servidor:", error);
-            alert("Error al conectar con el servidor.");
+            alert("Error en la conexión. Intenta de nuevo.");
         }
     };
 });
