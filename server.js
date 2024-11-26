@@ -33,6 +33,16 @@ app.post('/resultados', async (req, res) => {
     }
 });
 
+const express = require('express');
+
+// Configuración para servir archivos estáticos desde la carpeta 'public'
+app.use(express.static('public')); // Asegúrate de que la carpeta 'public' contiene tu index.html
+
+// Ruta para la página principal (index.html)
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html'); // Enviar index.html cuando se accede a '/'
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
