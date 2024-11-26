@@ -56,6 +56,62 @@ h1 {
     padding: 0 20px;
 }
 
+.texto-parque {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo suave */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    margin: 40px auto;
+    max-width: 90%; /* Max ancho */
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.texto-parque h3 {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2e6fa4; /* Color suave para el título */
+    text-transform: uppercase; /* Transforma el texto a mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.texto-parque p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: justify;
+    color: #444;
+}
+
+.texto-parque p:last-child {
+    margin-bottom: 0; /* Elimina el margen de la última párrafo */
+}
+
+.texto-parque p::before {
+    content: "🌳 "; /* Icono al inicio de cada párrafo */
+    font-size: 18px;
+}
+
+.texto-parque p::after {
+    content: " 🌞"; /* Icono al final de cada párrafo */
+    font-size: 18px;
+}
+
+/* Estilo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .texto-parque {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .texto-parque h3 {
+        font-size: 24px;
+    }
+}
+
+
 /* Estilo para las preguntas */
 .contenedor-pregunta {
     border: 1px solid #ddddddaf;
