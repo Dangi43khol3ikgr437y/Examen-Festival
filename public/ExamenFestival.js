@@ -984,6 +984,33 @@ function cargarPreguntas() {
         }
 
         contenedor.appendChild(opciones);
+
+        // Verificar si la pregunta es la 104 para insertar el texto entre la 104 y la 106
+        if (pregunta.id === 104) {
+            const textoParque = document.createElement("div");
+            textoParque.className = "texto-parque";
+            textoParque.innerHTML = `
+                <h3>A Day in the Park</h3>
+                <p>Last Sunday, my friends and I decided to spend a relaxing day in the park. The weather 
+                was perfect, with clear skies and a gentle breeze. As we entered the park, we were 
+                greeted by the sound of children laughing and playing.</p>
+                <p>We found a cozy spot under a large oak tree and laid out a picnic blanket. The aroma 
+                of freshly cut grass and blooming flowers filled the air. Everyone brought something to 
+                share, from sandwiches to fruit salads and refreshing drinks.</p>
+                <p>While we enjoyed our picnic, we observed families having a great time – kids flying kites, 
+                couples taking leisurely strolls, and people simply soaking up the sun. A group of 
+                musicians set up nearby, playing cheerful tunes that added to the joyful atmosphere.</p>
+                <p>As the day progressed, we decided to explore the park further. There was a beautiful 
+                lake with ducks swimming peacefully. The walking paths were lined with colorful flowers, 
+                creating a picturesque scene. We even joined in a friendly game of frisbee with a group 
+                of strangers, making new acquaintances.</p>
+                <p>As the sun began to set, we gathered our belongings and headed home. It was a day 
+                filled with laughter, good food, and the simple pleasures of nature. We all agreed that 
+                the park is a wonderful place to escape the hustle and bustle of daily life.</p>
+            `;
+            contenedorJuego.appendChild(textoParque);
+        }
+
         contenedorJuego.appendChild(contenedor);
     });
 }
